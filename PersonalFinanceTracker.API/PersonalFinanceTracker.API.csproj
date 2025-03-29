@@ -303,6 +303,16 @@
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PersonalFinanceTracker.Data\PersonalFinanceTracker.Data.csproj">
+      <Project>{2244ac04-4a83-4bc0-b345-3dc990c04f3e}</Project>
+      <Name>PersonalFinanceTracker.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonalFinanceTracker.Models\PersonalFinanceTracker.Models.csproj">
+      <Project>{a598843f-64cd-458d-9626-d179cbacaeea}</Project>
+      <Name>PersonalFinanceTracker.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
