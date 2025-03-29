@@ -1,0 +1,139 @@
+1. UserController
+Repository: IUserRepository
+Endpoints:
+
+GET /api/users/{id} - Get user by ID (GetById)
+GET /api/users/by-username/{username} - Get user by username (GetByUsername)
+GET /api/users/by-email/{email} - Get user by email (GetByEmail)
+POST /api/users/register - Create new user (Create)
+PUT /api/users/{id} - Update user profile (Update)
+POST /api/users/authenticate - Authenticate user (Authenticate)
+
+2. AccountsController
+Repository: IAccountRepository
+Endpoints:
+
+GET /api/accounts/{id} - Get account by ID (GetById)
+GET /api/accounts/user/{userId} - Get all accounts for a user (GetByUserId)
+POST /api/accounts - Create new account (Create)
+PUT /api/accounts/{id} - Update account details (Update)
+PUT /api/accounts/{id}/balance - Update account balance (UpdateBalance)
+DELETE /api/accounts/{id} - Delete an account (Delete)
+
+3. BudgetCategoriesController
+Repository: IBudgetCategoryRepository
+Endpoints:
+
+GET /api/categories/{id} - Get category by ID (GetById)
+GET /api/categories/user/{userId} - Get all categories for a user, with optional type filter (GetByUserId)
+POST /api/categories - Create new category (Create)
+PUT /api/categories/{id} - Update category (Update)
+DELETE /api/categories/{id} - Delete a category (Delete)
+POST /api/categories/sync - Sync category from Salesforce (SyncFromSalesforce)
+
+4. TransactionsController
+Repository: ITransactionRepository
+Endpoints:
+
+GET /api/transactions/{id} - Get transaction by ID (GetById)
+GET /api/transactions/user/{userId} - Get transactions for user with optional filters (GetByUserId)
+POST /api/transactions - Create new transaction (Create)
+PUT /api/transactions/{id} - Update transaction (Update)
+DELETE /api/transactions/{id} - Delete a transaction (Delete)
+
+5. FinancialGoalsController
+Repository: IFinancialGoalRepository
+Endpoints:
+
+GET /api/goals/{id} - Get goal by ID (GetById)
+GET /api/goals/user/{userId} - Get goals for user with optional filters (GetByUserId)
+POST /api/goals - Create new goal (Create)
+PUT /api/goals/{id} - Update goal (Update)
+PUT /api/goals/{id}/progress - Update goal progress (UpdateProgress)
+DELETE /api/goals/{id} - Delete a goal (Delete)
+POST /api/goals/sync - Sync goal from Salesforce (SyncFromSalesforce)
+
+6. InvestmentsController
+Repository: IInvestmentRepository
+Endpoints:
+
+GET /api/investments/{id} - Get investment by ID (GetById)
+GET /api/investments/user/{userId} - Get investments for user with optional asset class filter (GetByUserId)
+POST /api/investments - Create new investment (Create)
+PUT /api/investments/{id} - Update investment (Update)
+PUT /api/investments/{id}/price - Update investment price (UpdatePrice)
+DELETE /api/investments/{id} - Delete an investment (Delete)
+
+7. PaymentMethodsController
+Repository: IPaymentMethodRepository
+Endpoints:
+
+GET /api/payment-methods/{id} - Get payment method by ID (GetById)
+GET /api/payment-methods/user/{userId} - Get payment methods for user (GetByUserId)
+POST /api/payment-methods - Create new payment method (Create)
+PUT /api/payment-methods/{id} - Update payment method (Update)
+DELETE /api/payment-methods/{id} - Delete a payment method (Delete)
+POST /api/payment-methods/sync - Sync payment method from Salesforce (SyncFromSalesforce)
+
+8. ReportsController
+Repository: IReportRepository
+Endpoints:
+
+GET /api/reports/category-spending - Get monthly spending by category (GetMonthlyCategorySpending)
+
+Parameters: userId, year, month
+
+
+GET /api/reports/income-vs-expenses - Get income vs expenses by month (GetIncomeVsExpenses)
+
+Parameters: userId, monthsBack
+
+
+GET /api/reports/net-worth - Get net worth trend (GetNetWorthTrend)
+
+Parameters: userId, monthsBack
+
+
+GET /api/reports/asset-allocation - Get asset allocation (GetAssetAllocation)
+
+Parameters: userId
+
+
+
+9. SalesforceIntegrationController (Additional controller for Salesforce sync)
+Repositories: Multiple
+Endpoints:
+
+POST /api/salesforce/sync-all - Trigger sync of all data to/from Salesforce
+GET /api/salesforce/sync-status - Check sync status
+
+Implementation Considerations:
+
+Authentication & Authorization:
+
+Implement JWT token-based authentication
+Add an authorization filter to secure endpoints
+
+
+Request/Response Format:
+
+Use the ApiResponse<T> wrapper for consistent responses
+Include proper HTTP status codes
+
+
+Validation:
+
+Add model validation for all POST/PUT operations
+Return appropriate validation errors
+
+
+Error Handling:
+
+Implement global exception handling
+Log errors appropriately
+
+
+API Documentation:
+
+Update the HelpPage area to document all endpoints
+Include sample requests/responses

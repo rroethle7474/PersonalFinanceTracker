@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="ApiErrorResponse.cs" />
     <Compile Include="ApiResponse.cs" />
     <Compile Include="BudgetCategory.cs" />
     <Compile Include="FinancialGoal.cs" />

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using PersonalFinanceTracker.API.Infrastructure;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 
 namespace PersonalFinanceTracker.API
 {
@@ -10,6 +9,10 @@ namespace PersonalFinanceTracker.API
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
+            // Configure global exception handling
+            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
+            config.Services.Replace(typeof(IExceptionLogger), new GlobalExceptionLogger());
 
             // Web API routes
             config.MapHttpAttributeRoutes();
