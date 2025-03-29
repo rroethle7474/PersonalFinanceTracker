@@ -109,11 +109,6 @@ GET /api/salesforce/sync-status - Check sync status
 
 Implementation Considerations:
 
-Authentication & Authorization:
-
-Implement JWT token-based authentication
-Add an authorization filter to secure endpoints
-
 
 Request/Response Format:
 
@@ -121,19 +116,13 @@ Use the ApiResponse<T> wrapper for consistent responses
 Include proper HTTP status codes
 
 
-Validation:
-
-Add model validation for all POST/PUT operations
-Return appropriate validation errors
-
-
-Error Handling:
-
-Implement global exception handling
-Log errors appropriately
-
-
 API Documentation:
 
 Update the HelpPage area to document all endpoints
 Include sample requests/responses
+
+
+Salesforce Integration:
+
+Implement background sync process
+Handle authentication with Salesforce

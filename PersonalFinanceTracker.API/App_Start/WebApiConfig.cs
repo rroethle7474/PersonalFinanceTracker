@@ -1,6 +1,8 @@
 ﻿using PersonalFinanceTracker.API.Infrastructure;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.ExceptionHandling;
+using PersonalFinanceTracker.API.Areas.HelpPage;
 
 namespace PersonalFinanceTracker.API
 {
@@ -22,6 +24,10 @@ namespace PersonalFinanceTracker.API
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // Enable Help Page
+            config.SetDocumentationProvider(new XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")));
+            config.SetHelpPageSampleGenerator(new HelpPageSampleGenerator());
         }
     }
 }
