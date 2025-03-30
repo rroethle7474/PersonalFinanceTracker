@@ -75,7 +75,6 @@ namespace PersonalFinanceTracker.Data.Repositories
                 var parameters = new[]
                 {
                     CreateParameter("@UserID", transaction.UserID),
-                    CreateParameter("@AccountID", transaction.AccountID),
                     CreateNullableParameter("@CategoryID", transaction.CategoryID),
                     CreateParameter("@TransactionDate", transaction.TransactionDate),
                     CreateParameter("@Amount", transaction.Amount),
@@ -133,7 +132,6 @@ namespace PersonalFinanceTracker.Data.Repositories
             {
                 TransactionID = ToInt(row["TransactionID"]),
                 UserID = ToInt(row["UserID"]),
-                AccountID = ToInt(row["AccountID"]),
                 CategoryID = ToNullableInt(row["CategoryID"]),
                 TransactionDate = ToDateTime(row["TransactionDate"]),
                 Amount = ToDecimal(row["Amount"]),

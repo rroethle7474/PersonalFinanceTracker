@@ -47,13 +47,5 @@ namespace PersonalFinanceTracker.Models
         /// Date of user's last login
         /// </summary>
         public DateTime? LastLoginDate { get; set; }
-
-        // Navigation properties for EF if needed later
-        public virtual ICollection<Account> Accounts { get; set; }
-        public virtual ICollection<BudgetCategory> BudgetCategories { get; set; }
-        public virtual ICollection<Transaction> Transactions { get; set; }
-        public virtual ICollection<FinancialGoal> FinancialGoals { get; set; }
-        public virtual ICollection<Investment> Investments { get; set; }
-        public virtual ICollection<PaymentMethod> PaymentMethods { get; set; }
     }
 }

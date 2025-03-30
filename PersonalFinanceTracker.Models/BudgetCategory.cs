@@ -57,11 +57,5 @@ namespace PersonalFinanceTracker.Models
         /// When this category was last synced with Salesforce
         /// </summary>
         public DateTime? LastSyncDate { get; set; }
-
-        // Navigation properties
-        public virtual User User { get; set; }
-        public virtual BudgetCategory ParentCategory { get; set; }
-        public virtual ICollection<BudgetCategory> ChildCategories { get; set; }
-        public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

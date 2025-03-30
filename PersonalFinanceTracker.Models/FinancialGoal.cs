@@ -13,49 +13,15 @@ namespace PersonalFinanceTracker.Models
         public int GoalID { get; set; }
 
         /// <summary>
-        /// ID of the user who owns this goal
+        /// Category of the goal (Emergency Fund, Retirement, etc.)
         /// </summary>
-        public int UserID { get; set; }
-
-        /// <summary>
-        /// Name of the goal
-        /// </summary>
-        public string GoalName { get; set; }
-
-        /// <summary>
-        /// Target amount to save/achieve
-        /// </summary>
-        public decimal TargetAmount { get; set; }
+        public string Category { get; set; }
 
         /// <summary>
         /// Current progress toward the goal
         /// </summary>
         public decimal CurrentAmount { get; set; }
 
-        /// <summary>
-        /// When the goal was started
-        /// </summary>
-        public DateTime StartDate { get; set; }
-
-        /// <summary>
-        /// Deadline for achieving the goal
-        /// </summary>
-        public DateTime TargetDate { get; set; }
-
-        /// <summary>
-        /// Category of the goal (Emergency Fund, Retirement, etc.)
-        /// </summary>
-        public string Category { get; set; }
-
-        /// <summary>
-        /// Priority level (High, Medium, Low)
-        /// </summary>
-        public string Priority { get; set; }
-
-        /// <summary>
-        /// Current status (Not Started, In Progress, Completed)
-        /// </summary>
-        public string Status { get; set; }
 
         /// <summary>
         /// Detailed description of the goal
@@ -63,9 +29,44 @@ namespace PersonalFinanceTracker.Models
         public string Description { get; set; }
 
         /// <summary>
+        /// Name of the goal
+        /// </summary>
+        public string GoalName { get; set; }
+
+        /// <summary>
         /// Planned monthly contribution
         /// </summary>
         public decimal? MonthlyContribution { get; set; }
+
+        /// <summary>
+        /// ID of the user who owns this goal
+        /// </summary>
+        public int UserID { get; set; }
+
+        /// <summary>
+        /// Priority level (High, Medium, Low)
+        /// </summary>
+        public string Priority { get; set; }
+
+        /// <summary>
+        /// When the goal was started
+        /// </summary>
+        public DateTime StartDate { get; set; }
+
+        /// <summary>
+        /// Current status (Not Started, In Progress, Completed)
+        /// </summary>
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Target amount to save/achieve
+        /// </summary>
+        public decimal TargetAmount { get; set; }
+
+        /// <summary>
+        /// Deadline for achieving the goal
+        /// </summary>
+        public DateTime TargetDate { get; set; }
 
         /// <summary>
         /// ID in Salesforce if synced
@@ -80,8 +81,5 @@ namespace PersonalFinanceTracker.Models
         // Calculated properties
         public decimal PercentComplete => (CurrentAmount / TargetAmount) * 100;
         public int DaysRemaining => (TargetDate - DateTime.Now).Days;
-
-        // Navigation properties
-        public virtual User User { get; set; }
     }
 }

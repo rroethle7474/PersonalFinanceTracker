@@ -18,11 +18,6 @@ namespace PersonalFinanceTracker.Models
         public int UserID { get; set; }
 
         /// <summary>
-        /// ID of the account associated with this transaction
-        /// </summary>
-        public int AccountID { get; set; }
-
-        /// <summary>
         /// ID of the budget category for this transaction (optional)
         /// </summary>
         public int? CategoryID { get; set; }
@@ -75,10 +70,5 @@ namespace PersonalFinanceTracker.Models
         // Additional properties for API responses
         public string AccountName { get; set; }
         public string CategoryName { get; set; }
-
-        // Navigation properties
-        public virtual User User { get; set; }
-        public virtual Account Account { get; set; }
-        public virtual BudgetCategory Category { get; set; }
     }
 }

@@ -67,10 +67,5 @@ namespace PersonalFinanceTracker.Models
         /// When the account was last updated
         /// </summary>
         public DateTime LastUpdated { get; set; }
-
-        // Navigation properties
-        public virtual User User { get; set; }
-        public virtual ICollection<Transaction> Transactions { get; set; }
-        public virtual ICollection<Investment> Investments { get; set; }
     }
 }
