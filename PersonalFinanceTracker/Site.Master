@@ -6,7 +6,8 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <%-- Changed Title Prefix --%>
+    <title><%: Page.Title %> - Personal Finance Tracker</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -39,7 +40,8 @@
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                <%-- Changed Application Name --%>
+                <a class="navbar-brand" runat="server" href="~/">Personal Finance Tracker</a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -47,8 +49,9 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
+                        <%-- Removed About and Contact Links --%>
+                        <%-- <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li> --%>
+                        <%-- <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li> --%>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Register">Register</a></li>
@@ -62,7 +65,8 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <%-- Changed Footer Text --%>
+                <p>&copy; <%: DateTime.Now.Year %> - Personal Finance Tracker</p>
             </footer>
         </div>
     </form>
