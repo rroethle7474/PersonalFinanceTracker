@@ -1,0 +1,96 @@
+﻿
+
+Option 1 to register service:
+# Install the service
+sc.exe create "PersonalFinanceTrackerSync" binPath= "C:\path\to\your\PersonalFinanceTracker.SyncService.exe"
+sc.exe description "PersonalFinanceTrackerSync" "Synchronizes Personal Finance Tracker data with Salesforce CRM"
+sc.exe config "PersonalFinanceTrackerSync" start= auto
+
+# Start the service
+sc.exe start "PersonalFinanceTrackerSync"
+
+Option 2 (Preferred using InstallUtil that comes with .NET Framework):
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe C:\path\to\your\PersonalFinanceTracker.SyncService.exe
+
+Installation Process
+When you use InstallUtil.exe to install the service, the following happens:
+
+The InstallUtil tool loads your assembly
+It finds all classes with the [RunInstaller(true)] attribute
+It creates instances of these classes
+It calls the Install method on each installer
+The installers register the service with the Windows Service Control Manager
+
+Uninstallation Process
+Similarly, when uninstalling:
+
+InstallUtil.exe is called with the /u parameter
+It finds the installer classes
+It calls the Uninstall method on each
+The installers remove the service registration from the SCM
+
+How to Manage Windows Services
+You can manage all Windows Services (including your newly installed one) through these methods:
+
+Windows Services Manager:
+
+Press Win+R, type services.msc and press Enter
+Find your service in the list (it will appear as "Personal Finance Tracker Salesforce Sync")
+You can right-click on it to Stop, Start, Pause, or change its properties
+
+
+Command Line:
+
+Open Command Prompt as Administrator
+Use these commands:
+Copysc.exe stop "PersonalFinanceTrackerSync"    (to stop it)
+sc.exe start "PersonalFinanceTrackerSync"   (to start it)
+
+PowerShell:
+
+Open PowerShell as Administrator
+Use these commands:
+powershellCopyStop-Service -Name "PersonalFinanceTrackerSync"
+Start-Service -Name "PersonalFinanceTrackerSync"
+
+Uninstalling the Service
+If you want to completely remove the service from your system:
+
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /u C:\path\to\your\PersonalFinanceTracker.SyncService.exe
+
+Or via command line:
+sc.exe delete "PersonalFinanceTrackerSync"
+
+During Development
+During development, you have a couple of options:
+
+Don't install the service until you're ready to test it - Just build the project but don't run the InstallUtil command.
+Install but keep it in "Manual" start mode - This way it won't run on startup:
+csharpCopyStartType = ServiceStartMode.Manual,
+
+Debug Mode - Visual Studio has a special way to debug services without installing them. You can add this method to your service class:
+
+csharpCopy#if DEBUG
+internal void DebugStart(string[] args)
+{
+    OnStart(args);
+}
+#endif
+
+Console App for testing idea:
+
+static void Main()
+{
+    #if DEBUG
+    var service = new SalesforceSync();
+    service.DebugStart(null);
+    Console.WriteLine("Service started in debug mode. Press any key to stop.");
+    Console.ReadKey();
+    service.Stop();
+    #else
+    ServiceBase[] ServicesToRun = { new SalesforceSync() };
+    ServiceBase.Run(ServicesToRun);
+    #endif
+}
+
+
