@@ -14,6 +14,11 @@ namespace PersonalFinanceTracker.API.Controllers
     {
         private readonly IUserRepository _userRepository;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserController"/> class.
+        /// </summary>
+        /// <param name="userRepository">The repository.</param>
+        /// <exception cref="ArgumentNullException">Thrown when repository is null.</exception>
         public UserController(IUserRepository userRepository)
         {
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
@@ -172,8 +177,7 @@ namespace PersonalFinanceTracker.API.Controllers
         /// <summary>
         /// Authenticate user
         /// </summary>
-        /// <param name="username">Username</param>
-        /// <param name="password">Password</param>
+        /// <param name="request">Login request containing username and password</param>
         /// <returns>Authenticated user details</returns>
         [HttpPost]
         [Route("authenticate")]

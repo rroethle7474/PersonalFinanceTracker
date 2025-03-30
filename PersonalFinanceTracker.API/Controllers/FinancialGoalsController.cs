@@ -14,6 +14,11 @@ namespace PersonalFinanceTracker.API.Controllers
     {
         private readonly IFinancialGoalRepository _goalRepository;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinancialGoalsController"/> class.
+        /// </summary>
+        /// <param name="goalRepository">The repository.</param>
+        /// <exception cref="ArgumentNullException">Thrown when repository is null.</exception>
         public FinancialGoalsController(IFinancialGoalRepository goalRepository)
         {
             _goalRepository = goalRepository ?? throw new ArgumentNullException(nameof(goalRepository));

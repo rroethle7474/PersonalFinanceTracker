@@ -14,6 +14,11 @@ namespace PersonalFinanceTracker.API.Controllers
     {
         private readonly IAccountRepository _accountRepository;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountsController"/> class.
+        /// </summary>
+        /// <param name="accountRepository">The account repository.</param>
+        /// <exception cref="ArgumentNullException">Thrown when accountRepository is null.</exception>
         public AccountsController(IAccountRepository accountRepository)
         {
             _accountRepository = accountRepository ?? throw new ArgumentNullException(nameof(accountRepository));

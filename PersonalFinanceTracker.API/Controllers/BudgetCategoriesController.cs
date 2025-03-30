@@ -14,6 +14,11 @@ namespace PersonalFinanceTracker.API.Controllers
     {
         private readonly IBudgetCategoryRepository _categoryRepository;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BudgetCategoriesController"/> class.
+        /// </summary>
+        /// <param name="categoryRepository">The budget categories repository.</param>
+        /// <exception cref="ArgumentNullException">Thrown when Budget Category Repository is null.</exception>
         public BudgetCategoriesController(IBudgetCategoryRepository categoryRepository)
         {
             _categoryRepository = categoryRepository ?? throw new ArgumentNullException(nameof(categoryRepository));

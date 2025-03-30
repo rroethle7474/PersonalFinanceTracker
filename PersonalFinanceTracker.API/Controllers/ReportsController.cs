@@ -3,6 +3,7 @@ using System.Net;
 using System.Web.Http;
 using PersonalFinanceTracker.Models.Reports;
 using PersonalFinanceTracker.Data.Repositories;
+using PersonalFinanceTracker.Models;
 
 namespace PersonalFinanceTracker.API.Controllers
 {
@@ -14,6 +15,11 @@ namespace PersonalFinanceTracker.API.Controllers
     {
         private readonly IReportRepository _reportRepository;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReportsController"/> class.
+        /// </summary>
+        /// <param name="reportRepository">The repository.</param>
+        /// <exception cref="ArgumentNullException">Thrown when repository is null.</exception>
         public ReportsController(IReportRepository reportRepository)
         {
             _reportRepository = reportRepository ?? throw new ArgumentNullException(nameof(reportRepository));

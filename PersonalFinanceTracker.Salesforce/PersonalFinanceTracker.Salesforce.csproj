@@ -101,6 +101,7 @@
     <Compile Include="Client\SalesforceClient.cs" />
     <Compile Include="Configuration\SalesforceSettings.cs" />
     <Compile Include="Exceptions\SalesforceException.cs" />
+    <Compile Include="Mapping\SalesforceBudgetCategoryMapper.cs" />
     <Compile Include="Models\SalesforceAccount.cs" />
     <Compile Include="Models\SalesforceBudgetCategory.cs" />
     <Compile Include="Models\SalesforceFinancialGoal.cs" />
@@ -108,11 +109,21 @@
     <Compile Include="Models\SalesforcePaymentMethod.cs" />
     <Compile Include="Models\SalesforceTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Interfaces\ISalesforceAccountService.cs" />
+    <Compile Include="Services\Interfaces\ISalesforceBudgetCategoryService.cs" />
+    <Compile Include="Services\Interfaces\ISalesforcePaymentMethodService.cs" />
+    <Compile Include="Services\Interfaces\ISalesforceTransactionService.cs" />
+    <Compile Include="Services\SalesforceAccountService.cs" />
+    <Compile Include="Services\SalesforceBudgetCategoryService.cs" />
+    <Compile Include="Services\SalesforcePaymentMethodService.cs" />
+    <Compile Include="Services\SalesforceTransactionService.cs" />
     <Compile Include="Utilities\SalesforceLogger.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Mapping\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\PersonalFinanceTracker.Models\PersonalFinanceTracker.Models.csproj">
+      <Project>{a598843f-64cd-458d-9626-d179cbacaeea}</Project>
+      <Name>PersonalFinanceTracker.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
