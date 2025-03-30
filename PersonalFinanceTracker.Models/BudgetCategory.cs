@@ -46,7 +46,7 @@ namespace PersonalFinanceTracker.Models
         /// <summary>
         /// ID of the parent category for hierarchical categorization
         /// </summary>
-        public int? ParentCategoryID { get; set; }
+        public int? ParentCategoryID { get; set; } // not used right now, just use null values as this isn't implemented yet or added to Salesforce
 
         /// <summary>
         /// ID in Salesforce if synced

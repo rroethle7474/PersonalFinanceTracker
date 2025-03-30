@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PersonalFinanceTracker.Salesforce.Models
 {
-    public class SalesforceInvestmentTarget // won't be used at this time but would map to PersonalFinanceTracker.Models.Investment
+    public class SalesforceUser // map to PersonalFinanceTracker.Models.User
     {
+
     }
 }

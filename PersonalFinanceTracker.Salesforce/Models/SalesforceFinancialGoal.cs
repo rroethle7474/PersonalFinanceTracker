@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PersonalFinanceTracker.Salesforce.Models
 {
-    public class SalesforceFinancialGoal
+    public class SalesforceFinancialGoal // won't be used at this time but would map to PersonalFinanceTracker.Models.FinancialGoal
     {
         [JsonProperty("Id")]
         public string Id { get; set; }

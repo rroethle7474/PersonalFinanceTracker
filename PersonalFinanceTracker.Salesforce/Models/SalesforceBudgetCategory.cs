@@ -2,7 +2,7 @@
 
 namespace PersonalFinanceTracker.Salesforce.Models
 {
-    public class SalesforceBudgetCategory
+    public class SalesforceBudgetCategory // map to PersonalFinanceTracker.Models.BudgetCategory
     {
         [JsonProperty("Id")]
         public string Id { get; set; }
@@ -22,7 +22,7 @@ namespace PersonalFinanceTracker.Salesforce.Models
         [JsonProperty("Is_Active__c")]
         public bool IsActive { get; set; }
 
-        [JsonProperty("Parent_Category__c")]
-        public string ParentCategoryId { get; set; }
+        [JsonProperty("OwnerId")]
+        public string UserId { get; set; } // Lookup to User by Id in Salesforce
     }
 }
