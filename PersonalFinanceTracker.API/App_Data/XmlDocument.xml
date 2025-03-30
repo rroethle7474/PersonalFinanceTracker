@@ -481,10 +481,437 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:PersonalFinanceTracker.API.Controllers.AccountsController">
+            <summary>
+            Controller for managing financial accounts
+            </summary>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.AccountsController.#ctor(PersonalFinanceTracker.Data.Repositories.IAccountRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PersonalFinanceTracker.API.Controllers.AccountsController"/> class.
+            </summary>
+            <param name="accountRepository">The account repository.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when accountRepository is null.</exception>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.AccountsController.GetById(System.Int32)">
+            <summary>
+            Get account by ID
+            </summary>
+            <param name="id">Account ID</param>
+            <returns>Account details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.AccountsController.GetByUserId(System.Int32)">
+            <summary>
+            Get all accounts for a user
+            </summary>
+            <param name="userId">User ID</param>
+            <returns>List of accounts</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.AccountsController.Create(PersonalFinanceTracker.Models.Account)">
+            <summary>
+            Create a new account
+            </summary>
+            <param name="account">Account details</param>
+            <returns>Created account details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.AccountsController.Update(System.Int32,PersonalFinanceTracker.Models.Account)">
+            <summary>
+            Update account details
+            </summary>
+            <param name="id">Account ID</param>
+            <param name="account">Updated account details</param>
+            <returns>Updated account details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.AccountsController.UpdateBalance(System.Int32,System.Decimal)">
+            <summary>
+            Update account balance
+            </summary>
+            <param name="id">Account ID</param>
+            <param name="newBalance">New balance amount</param>
+            <returns>Updated account details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.AccountsController.Delete(System.Int32)">
+            <summary>
+            Delete an account
+            </summary>
+            <param name="id">Account ID</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="T:PersonalFinanceTracker.API.Controllers.BudgetCategoriesController">
+            <summary>
+            Controller for managing budget categories
+            </summary>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.BudgetCategoriesController.#ctor(PersonalFinanceTracker.Data.Repositories.IBudgetCategoryRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PersonalFinanceTracker.API.Controllers.BudgetCategoriesController"/> class.
+            </summary>
+            <param name="categoryRepository">The budget categories repository.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when Budget Category Repository is null.</exception>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.BudgetCategoriesController.GetById(System.Int32)">
+            <summary>
+            Get category by ID
+            </summary>
+            <param name="id">Category ID</param>
+            <returns>Category details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.BudgetCategoriesController.GetByUserId(System.Int32,System.String)">
+            <summary>
+            Get all categories for a user with optional type filter
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="categoryType">Optional category type filter (Income, Expense)</param>
+            <returns>List of categories</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.BudgetCategoriesController.Create(PersonalFinanceTracker.Models.BudgetCategory)">
+            <summary>
+            Create a new category
+            </summary>
+            <param name="category">Category details</param>
+            <returns>Created category details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.BudgetCategoriesController.Update(System.Int32,PersonalFinanceTracker.Models.BudgetCategory)">
+            <summary>
+            Update category details
+            </summary>
+            <param name="id">Category ID</param>
+            <param name="category">Updated category details</param>
+            <returns>Updated category details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.BudgetCategoriesController.Delete(System.Int32)">
+            <summary>
+            Delete a category
+            </summary>
+            <param name="id">Category ID</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.BudgetCategoriesController.SyncFromSalesforce(PersonalFinanceTracker.Models.BudgetCategory)">
+            <summary>
+            Sync category from Salesforce
+            </summary>
+            <param name="category">Category details from Salesforce</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="T:PersonalFinanceTracker.API.Controllers.FinancialGoalsController">
+            <summary>
+            Controller for managing financial goals
+            </summary>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.FinancialGoalsController.#ctor(PersonalFinanceTracker.Data.Repositories.IFinancialGoalRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PersonalFinanceTracker.API.Controllers.FinancialGoalsController"/> class.
+            </summary>
+            <param name="goalRepository">The repository.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when repository is null.</exception>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.FinancialGoalsController.GetById(System.Int32)">
+            <summary>
+            Get goal by ID
+            </summary>
+            <param name="id">Goal ID</param>
+            <returns>Goal details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.FinancialGoalsController.GetByUserId(System.Int32,System.String,System.String)">
+            <summary>
+            Get goals for a user with optional filters
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="category">Optional category filter</param>
+            <param name="status">Optional status filter</param>
+            <returns>List of goals</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.FinancialGoalsController.Create(PersonalFinanceTracker.Models.FinancialGoal)">
+            <summary>
+            Create a new goal
+            </summary>
+            <param name="goal">Goal details</param>
+            <returns>Created goal details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.FinancialGoalsController.Update(System.Int32,PersonalFinanceTracker.Models.FinancialGoal)">
+            <summary>
+            Update goal details
+            </summary>
+            <param name="id">Goal ID</param>
+            <param name="goal">Updated goal details</param>
+            <returns>Updated goal details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.FinancialGoalsController.UpdateProgress(System.Int32,System.Decimal,System.String)">
+            <summary>
+            Update goal progress
+            </summary>
+            <param name="id">Goal ID</param>
+            <param name="newAmount">New current amount</param>
+            <param name="newStatus">Optional new status</param>
+            <returns>Updated goal details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.FinancialGoalsController.Delete(System.Int32)">
+            <summary>
+            Delete a goal
+            </summary>
+            <param name="id">Goal ID</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.FinancialGoalsController.SyncFromSalesforce(PersonalFinanceTracker.Models.FinancialGoal)">
+            <summary>
+            Sync goal from Salesforce
+            </summary>
+            <param name="goal">Goal details from Salesforce</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="T:PersonalFinanceTracker.API.Controllers.InvestmentsController">
+            <summary>
+            Controller for managing investment holdings
+            </summary>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.InvestmentsController.GetById(System.Int32)">
+            <summary>
+            Get investment by ID
+            </summary>
+            <param name="id">Investment ID</param>
+            <returns>Investment details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.InvestmentsController.GetByUserId(System.Int32,System.String)">
+            <summary>
+            Get investments for a user with optional asset class filter
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="assetClass">Optional asset class filter</param>
+            <returns>List of investments</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.InvestmentsController.Create(PersonalFinanceTracker.Models.Investment)">
+            <summary>
+            Create a new investment
+            </summary>
+            <param name="investment">Investment details</param>
+            <returns>Created investment details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.InvestmentsController.Update(System.Int32,PersonalFinanceTracker.Models.Investment)">
+            <summary>
+            Update investment details
+            </summary>
+            <param name="id">Investment ID</param>
+            <param name="investment">Updated investment details</param>
+            <returns>Updated investment details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.InvestmentsController.UpdatePrice(System.Int32,System.Decimal)">
+            <summary>
+            Update investment price
+            </summary>
+            <param name="id">Investment ID</param>
+            <param name="newPrice">New current price</param>
+            <returns>Updated investment details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.InvestmentsController.Delete(System.Int32)">
+            <summary>
+            Delete an investment
+            </summary>
+            <param name="id">Investment ID</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="T:PersonalFinanceTracker.API.Controllers.PaymentMethodsController">
+            <summary>
+            Controller for managing payment methods
+            </summary>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.PaymentMethodsController.GetById(System.Int32)">
+            <summary>
+            Get payment method by ID
+            </summary>
+            <param name="id">Payment method ID</param>
+            <returns>Payment method details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.PaymentMethodsController.GetByUserId(System.Int32)">
+            <summary>
+            Get payment methods for a user
+            </summary>
+            <param name="userId">User ID</param>
+            <returns>List of payment methods</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.PaymentMethodsController.Create(PersonalFinanceTracker.Models.PaymentMethod)">
+            <summary>
+            Create a new payment method
+            </summary>
+            <param name="paymentMethod">Payment method details</param>
+            <returns>Created payment method details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.PaymentMethodsController.Update(System.Int32,PersonalFinanceTracker.Models.PaymentMethod)">
+            <summary>
+            Update payment method details
+            </summary>
+            <param name="id">Payment method ID</param>
+            <param name="paymentMethod">Updated payment method details</param>
+            <returns>Updated payment method details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.PaymentMethodsController.Delete(System.Int32)">
+            <summary>
+            Delete a payment method
+            </summary>
+            <param name="id">Payment method ID</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.PaymentMethodsController.SyncFromSalesforce(PersonalFinanceTracker.Models.PaymentMethod)">
+            <summary>
+            Sync payment method from Salesforce
+            </summary>
+            <param name="paymentMethod">Payment method details from Salesforce</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="T:PersonalFinanceTracker.API.Controllers.ReportsController">
+            <summary>
+            Controller for generating financial reports
+            </summary>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.ReportsController.#ctor(PersonalFinanceTracker.Data.Repositories.IReportRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PersonalFinanceTracker.API.Controllers.ReportsController"/> class.
+            </summary>
+            <param name="reportRepository">The repository.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when repository is null.</exception>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.ReportsController.GetMonthlyCategorySpending(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get monthly spending by category
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="year">Year</param>
+            <param name="month">Month</param>
+            <returns>List of category spending</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.ReportsController.GetIncomeVsExpenses(System.Int32,System.Int32)">
+            <summary>
+            Get monthly income vs expenses
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="monthsBack">Number of months to look back (default: 12)</param>
+            <returns>List of monthly financial summaries</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.ReportsController.GetNetWorthTrend(System.Int32,System.Int32)">
+            <summary>
+            Get net worth trend over time
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="monthsBack">Number of months to look back (default: 12)</param>
+            <returns>List of net worth summaries</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.ReportsController.GetAssetAllocation(System.Int32)">
+            <summary>
+            Get asset allocation by asset class
+            </summary>
+            <param name="userId">User ID</param>
+            <returns>List of asset allocations</returns>
+        </member>
+        <member name="T:PersonalFinanceTracker.API.Controllers.SalesforceIntegrationController">
+            <summary>
+            Controller for managing Salesforce integration
+            </summary>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.SalesforceIntegrationController.SyncAllData(System.Int32)">
+            <summary>
+            Sync all data with Salesforce
+            </summary>
+            <param name="userId">User ID</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.SalesforceIntegrationController.SyncTransactions(System.Int32)">
+            <summary>
+            Sync transactions with Salesforce
+            </summary>
+            <param name="userId">User ID</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.SalesforceIntegrationController.SyncFinancialGoals(System.Int32)">
+            <summary>
+            Sync financial goals with Salesforce
+            </summary>
+            <param name="userId">User ID</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.SalesforceIntegrationController.SyncPaymentMethods(System.Int32)">
+            <summary>
+            Sync payment methods with Salesforce
+            </summary>
+            <param name="userId">User ID</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.SalesforceIntegrationController.SyncInvestments(System.Int32)">
+            <summary>
+            Sync investments with Salesforce
+            </summary>
+            <param name="userId">User ID</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.SalesforceIntegrationController.GetSyncStatus(System.Int32)">
+            <summary>
+            Get sync status for a user
+            </summary>
+            <param name="userId">User ID</param>
+            <returns>Sync status details</returns>
+        </member>
+        <member name="T:PersonalFinanceTracker.API.Controllers.TransactionsController">
+            <summary>
+            Controller for managing financial transactions
+            </summary>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.TransactionsController.#ctor(PersonalFinanceTracker.Data.Repositories.ITransactionRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PersonalFinanceTracker.API.Controllers.TransactionsController"/> class.
+            </summary>
+            <param name="transactionRepository">The repository.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when repository is null.</exception>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.TransactionsController.GetById(System.Int32)">
+            <summary>
+            Get transaction by ID
+            </summary>
+            <param name="id">Transaction ID</param>
+            <returns>Transaction details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.TransactionsController.GetByUserId(System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean})">
+            <summary>
+            Get transactions for a user with optional filters
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="startDate">Optional start date filter</param>
+            <param name="endDate">Optional end date filter</param>
+            <param name="categoryId">Optional category filter</param>
+            <param name="accountId">Optional account filter</param>
+            <param name="isIncome">Optional income/expense filter</param>
+            <returns>List of transactions</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.TransactionsController.Create(PersonalFinanceTracker.Models.Transaction)">
+            <summary>
+            Create a new transaction
+            </summary>
+            <param name="transaction">Transaction details</param>
+            <returns>Created transaction details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.TransactionsController.Update(System.Int32,PersonalFinanceTracker.Models.Transaction)">
+            <summary>
+            Update transaction details
+            </summary>
+            <param name="id">Transaction ID</param>
+            <param name="transaction">Updated transaction details</param>
+            <returns>Updated transaction details</returns>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.TransactionsController.Delete(System.Int32)">
+            <summary>
+            Delete a transaction
+            </summary>
+            <param name="id">Transaction ID</param>
+            <returns>Success status</returns>
+        </member>
         <member name="T:PersonalFinanceTracker.API.Controllers.UserController">
             <summary>
             Controller for managing user-related operations
             </summary>
+        </member>
+        <member name="M:PersonalFinanceTracker.API.Controllers.UserController.#ctor(PersonalFinanceTracker.Data.Repositories.IUserRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PersonalFinanceTracker.API.Controllers.UserController"/> class.
+            </summary>
+            <param name="userRepository">The repository.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when repository is null.</exception>
         </member>
         <member name="M:PersonalFinanceTracker.API.Controllers.UserController.GetById(System.Int32)">
             <summary>
@@ -526,8 +953,7 @@
             <summary>
             Authenticate user
             </summary>
-            <param name="username">Username</param>
-            <param name="password">Password</param>
+            <param name="request">Login request containing username and password</param>
             <returns>Authenticated user details</returns>
         </member>
         <member name="T:PersonalFinanceTracker.API.Controllers.LoginRequest">
