@@ -56,5 +56,42 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\Transactions.sql" />
+    <Build Include="dbo\Tables\SalesforceSync.sql" />
+    <Build Include="dbo\Tables\PaymentMethods.sql" />
+    <Build Include="dbo\Tables\Investments.sql" />
+    <Build Include="dbo\Tables\FinancialGoals.sql" />
+    <Build Include="dbo\Tables\BudgetCategories.sql" />
+    <Build Include="dbo\Tables\Accounts.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateInvestmentPrice.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateGoalProgress.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateAccountBalance.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SyncFinancialGoalFromSalesforce.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SyncBudgetCategoryFromSalesforce.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SyncAccountFromSalesforce.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PopulateSampleData.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetUserTransactions.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetUserAccounts.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetNetWorthTrend.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetMonthlyCategorySpending.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetInvestments.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetIncomeVsExpensesByMonth.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetFinancialGoals.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetBudgetCategories.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetAssetAllocation.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CreateUser.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CreateTestUser.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CreateAccount.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AuthenticateUser.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AddTransaction.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AddInvestment.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AddFinancialGoal.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AddBudgetCategory.sql" />
   </ItemGroup>
 </Project>
