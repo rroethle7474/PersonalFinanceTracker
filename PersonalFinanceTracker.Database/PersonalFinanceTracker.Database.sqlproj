@@ -97,5 +97,20 @@
     <Build Include="dbo\Stored Procedures\usp_GetUserByUsername.sql" />
     <Build Include="dbo\Stored Procedures\usp_GetUserById.sql" />
     <Build Include="dbo\Stored Procedures\usp_GetUserByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateTransaction.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdatePaymentMethod.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateBudgetCategory.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateAccount.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SyncPaymentMethodFromSalesforce.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetTransactionById.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetPaymentMethods.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetPaymentMethodById.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetCategoryById.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetAccountById.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DeleteTransaction.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DeletePaymentMethod.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DeleteBudgetCategory.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DeleteAccount.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CreatePaymentMethod.sql" />
   </ItemGroup>
 </Project>
