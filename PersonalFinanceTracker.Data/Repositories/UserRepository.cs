@@ -99,7 +99,8 @@ namespace PersonalFinanceTracker.Data.Repositories
                     CreateParameter("@UserID", user.UserID),
                     CreateParameter("@FirstName", user.FirstName),
                     CreateParameter("@LastName", user.LastName),
-                    CreateParameter("@Email", user.Email)
+                    CreateParameter("@Email", user.Email),
+                     CreateParameter("@LastLoginDate", user.LastLoginDate)
                 };
 
                 return db.ExecuteNonQuery("usp_UpdateUser", parameters) > 0;

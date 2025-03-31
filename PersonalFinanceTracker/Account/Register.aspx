@@ -33,6 +33,22 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label">First Name</asp:Label>
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="FirstName"
+                                CssClass="text-danger" ErrorMessage="The First Name field is required." />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="LastName" CssClass="col-md-2 control-label">Last Name</asp:Label>
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="LastName" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName"
+                                CssClass="text-danger" ErrorMessage="The Last Name field is required." />
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />

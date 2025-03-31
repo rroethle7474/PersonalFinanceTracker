@@ -1,4 +1,4 @@
-﻿Imports Microsoft.Extensions.DependencyInjection
+Imports Microsoft.Extensions.DependencyInjection
 Imports PersonalFinanceTracker.PersonalFinanceTracker
 Imports PersonalFinanceTracker.Services
 Imports System
@@ -44,9 +44,11 @@ Namespace Account
             Dim usernameValue = Username.Text
             Dim emailValue = Email.Text
             Dim passwordValue = Password.Text
+            Dim firstNameValue = FirstName.Text
+            Dim lastNameValue = LastName.Text
 
             Try
-                Dim success As Boolean = Await _userService.RegisterUserAsync(usernameValue, passwordValue, emailValue)
+                Dim success As Boolean = Await _userService.RegisterUserAsync(usernameValue, passwordValue, emailValue, firstNameValue, lastNameValue)
 
                 If success Then
                     ' Registration successful

@@ -14,13 +14,15 @@ Namespace Services
             _httpClient = httpClient
         End Sub
 
-        Public Async Function RegisterUserAsync(username As String, password As String, email As String) As Task(Of Boolean) Implements IUserService.RegisterUserAsync
+        Public Async Function RegisterUserAsync(username As String, password As String, email As String, firstName As String, lastName As String) As Task(Of Boolean) Implements IUserService.RegisterUserAsync
             Const registrationRoute As String = "users/register"
 
             Dim userData = New With {
                 .Username = username,
                 .Email = email,
-                .PasswordHash = password
+                .PasswordHash = password,
+                .FirstName = firstName,
+                .LastName = lastName
             }
 
             Dim jsonContent = New StringContent(JsonConvert.SerializeObject(userData), Encoding.UTF8, "application/json")
