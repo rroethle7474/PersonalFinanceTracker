@@ -6,6 +6,7 @@ Imports System.Threading.Tasks
 Imports System.Web.UI
 Imports System.Web.Security
 Imports PersonalFinanceTracker.PersonalFinanceTracker ' Added for FormsAuthentication
+Imports Newtonsoft.Json
 
 Namespace Account
     Public Class Login
@@ -49,11 +50,31 @@ Namespace Account
 
                 If result.IsSuccess Then
                     ' Authentication successful
-                    ' WARNING: Storing user data directly in session is simple but has limitations.
-                    ' Consider using ASP.NET Identity or a more robust session management strategy for production.
+                    ' Store user data in session
                     Session("UserLoggedIn") = True
                     Session("Username") = usernameValue
-                    ' Session("UserData") = result.UserData ' Optionally store more user data
+                    
+                    ' Store the user data from the API response
+                    If result.UserData IsNot Nothing Then
+                        ' Convert the dynamic object to a dictionary for easier access
+                        Dim userData As Dictionary(Of String, Object) = JsonConvert.DeserializeObject(Of Dictionary(Of String, Object))(JsonConvert.SerializeObject(result.UserData))
+
+                        ' Store user ID and name in session
+                        If userData.ContainsKey("UserID") Then
+                            Session("UserId") = userData("UserID")
+                        End If
+
+                        If userData.ContainsKey("FirstName") Then
+                            Session("FirstName") = userData("FirstName")
+                        End If
+                        
+                        If userData.ContainsKey("LastName") Then
+                            Session("LastName") = userData("LastName")
+                        End If
+                        
+                        ' Store the full user data object if needed
+                        Session("UserData") = result.UserData
+                    End If
 
                     ' Use FormsAuthentication to set the auth cookie
                     FormsAuthentication.SetAuthCookie(usernameValue, False) ' Set False for session cookie
@@ -61,9 +82,9 @@ Namespace Account
                     ' Redirect to return URL or default page
                     Dim returnUrl = Request.QueryString("ReturnUrl")
                     If Not String.IsNullOrEmpty(returnUrl) AndAlso IsLocalUrl(returnUrl) Then
-                        Response.Redirect(returnUrl)
+                        Response.Redirect(returnUrl, False) ' The False parameter prevents thread abortion
                     Else
-                        Response.Redirect("~/Default.aspx")
+                        Response.Redirect("~/Default.aspx", False)
                     End If
                 Else
                     ' Authentication failed

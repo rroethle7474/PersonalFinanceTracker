@@ -14,6 +14,51 @@ Option Explicit On
 Partial Public Class SiteMaster
 
     '''<summary>
+    '''AuthenticatedNav control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents AuthenticatedNav As Global.System.Web.UI.WebControls.PlaceHolder
+
+    '''<summary>
+    '''AnonymousUI control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents AnonymousUI As Global.System.Web.UI.WebControls.PlaceHolder
+
+    '''<summary>
+    '''AuthenticatedUI control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents AuthenticatedUI As Global.System.Web.UI.WebControls.PlaceHolder
+
+    '''<summary>
+    '''UserFirstName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UserFirstName As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''LogoutButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LogoutButton As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''MainContent control.
     '''</summary>
     '''<remarks>

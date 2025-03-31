@@ -35,6 +35,13 @@ Public Class Global_asax
                                                                  ' client.DefaultRequestHeaders.Add("Accept", "application/json")
                                                              End Sub)
 
+        ' Register IPaymentMethodService with a Typed HttpClient
+        services.AddHttpClient(Of IPaymentMethodService, PaymentMethodService)(Sub(client)
+                                                                                   client.BaseAddress = New Uri(apiBaseUrl)
+                                                                                   ' You can add default headers here if needed, e.g.:
+                                                                                   ' client.DefaultRequestHeaders.Add("Accept", "application/json")
+                                                                               End Sub)
+
         ' TODO: Register other services here
     End Sub
 

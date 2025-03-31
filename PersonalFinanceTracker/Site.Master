@@ -18,6 +18,9 @@
 
 </head>
 <body>
+
+
+
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -49,13 +52,27 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
+                        <%-- Only show PaymentMethods link for authenticated users --%>
+                        <asp:PlaceHolder runat="server" ID="AuthenticatedNav" Visible="false">
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/CustomPages/PaymentMethods.aspx">Payment Methods</a></li>
+                        </asp:PlaceHolder>
                         <%-- Removed About and Contact Links --%>
                         <%-- <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li> --%>
                         <%-- <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li> --%>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Register">Register</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Login">Log in</a></li>
+                        <asp:PlaceHolder runat="server" ID="AnonymousUI" Visible="false">
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Register">Register</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Login">Log in</a></li>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder runat="server" ID="AuthenticatedUI" Visible="false">
+                            <li class="nav-item">
+                                <span class="nav-link text-light">Hello, <asp:Literal runat="server" ID="UserFirstName" /></span>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LogoutButton" runat="server" CssClass="nav-link" OnClick="LogoutButton_Click">Logout</asp:LinkButton>
+                            </li>
+                        </asp:PlaceHolder>
                     </ul>
                 </div>
             </div>

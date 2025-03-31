@@ -42,6 +42,24 @@ Namespace Account
         Protected WithEvents Email As Global.System.Web.UI.WebControls.TextBox
 
         '''<summary>
+        '''FirstName control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents FirstName As Global.System.Web.UI.WebControls.TextBox
+
+        '''<summary>
+        '''LastName control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents LastName As Global.System.Web.UI.WebControls.TextBox
+
+        '''<summary>
         '''Password control.
         '''</summary>
         '''<remarks>
