@@ -93,5 +93,9 @@
     <Build Include="dbo\Stored Procedures\usp_AddInvestment.sql" />
     <Build Include="dbo\Stored Procedures\usp_AddFinancialGoal.sql" />
     <Build Include="dbo\Stored Procedures\usp_AddBudgetCategory.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateUser.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetUserByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetUserById.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetUserByEmail.sql" />
   </ItemGroup>
 </Project>
