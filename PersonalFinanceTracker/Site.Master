@@ -55,10 +55,10 @@
                         <%-- Only show PaymentMethods link for authenticated users --%>
                         <asp:PlaceHolder runat="server" ID="AuthenticatedNav" Visible="false">
                             <li class="nav-item"><a class="nav-link" runat="server" href="~/CustomPages/PaymentMethods.aspx">Payment Methods</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/CustomPages/BudgetCategories.aspx">Budget Categories</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/CustomPages/Accounts.aspx">Accounts</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/CustomPages/Transactions.aspx">Transactions</a></li>
                         </asp:PlaceHolder>
-                        <%-- Removed About and Contact Links --%>
-                        <%-- <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li> --%>
-                        <%-- <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li> --%>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <asp:PlaceHolder runat="server" ID="AnonymousUI" Visible="false">

@@ -19,7 +19,6 @@
                                 CssClass="text-danger" ErrorMessage="The Username field is required."></asp:RequiredFieldValidator>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
                         <div class="col-md-10">
@@ -44,7 +43,7 @@
                     </div>
                     <p>
                         <%-- Added ID="RegisterHyperLink" --%>
-                        <asp:HyperLink runat="server" ID="RegisterHyperLink" NavigateUrl="~/Account/Register" >Register as a new user?</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="RegisterHyperLink" NavigateUrl="~/AccountPages/Register" >Register as a new user?</asp:HyperLink>
                     </p>
                 </div>
             </section>

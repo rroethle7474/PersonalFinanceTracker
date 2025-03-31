@@ -107,8 +107,8 @@
     <asp:Panel ID="UnauthenticatedContent" runat="server" Visible="false">
         <div class="alert alert-warning">
             <p>You must be logged in to access this page.</p>
-            <p><asp:HyperLink runat="server" NavigateUrl="~/Account/Login">Log in</asp:HyperLink> or 
-            <asp:HyperLink runat="server" NavigateUrl="~/Account/Register">Register</asp:HyperLink> to continue.</p>
+            <p><asp:HyperLink runat="server" NavigateUrl="~/AccountPages/Login">Log in</asp:HyperLink> or 
+            <asp:HyperLink runat="server" NavigateUrl="~/AccountPages/Register">Register</asp:HyperLink> to continue.</p>
         </div>
     </asp:Panel>
 </asp:Content>
