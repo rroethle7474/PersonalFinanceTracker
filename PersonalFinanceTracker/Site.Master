@@ -62,8 +62,8 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <asp:PlaceHolder runat="server" ID="AnonymousUI" Visible="false">
-                            <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Register">Register</a></li>
-                            <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Login">Log in</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/AccountPages/Register">Register</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/AccountPages/Login">Log in</a></li>
                         </asp:PlaceHolder>
                         <asp:PlaceHolder runat="server" ID="AuthenticatedUI" Visible="false">
                             <li class="nav-item">

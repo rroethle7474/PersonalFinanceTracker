@@ -10,7 +10,7 @@
 Option Strict On
 Option Explicit On
 
-Namespace Account
+Namespace AccountPages
 
     Partial Public Class Register
 

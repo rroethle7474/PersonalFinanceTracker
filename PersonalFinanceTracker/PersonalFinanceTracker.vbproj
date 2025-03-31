@@ -175,8 +175,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Account\Login.aspx" />
-    <Content Include="Account\Register.aspx" />
+    <Content Include="AccountPages\Login.aspx" />
+    <Content Include="AccountPages\Register.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -262,17 +262,17 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\Login.aspx.designer.vb">
+    <Compile Include="AccountPages\Login.aspx.designer.vb">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Login.aspx.vb">
+    <Compile Include="AccountPages\Login.aspx.vb">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Account\Register.aspx.designer.vb">
+    <Compile Include="AccountPages\Register.aspx.designer.vb">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Register.aspx.vb">
+    <Compile Include="AccountPages\Register.aspx.vb">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
@@ -353,9 +353,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Services\AccountService.vb" />
+    <Compile Include="Services\BudgetCategoryService.vb" />
+    <Compile Include="Services\IAccountService.vb" />
+    <Compile Include="Services\IBudgetCategoryService.vb" />
     <Compile Include="Services\IPaymentMethodService.vb" />
+    <Compile Include="Services\ITransactionService.vb" />
     <Compile Include="Services\IUserService.vb" />
     <Compile Include="Services\PaymentMethodService.vb" />
+    <Compile Include="Services\TransactionService.vb" />
     <Compile Include="Services\UserService.vb" />
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>

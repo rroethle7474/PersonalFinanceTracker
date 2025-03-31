@@ -1,4 +1,4 @@
-<%@ Page Title="Log in" Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="Login.aspx.vb" Inherits="PersonalFinanceTracker.Account.Login" Async="true" %>
+<%@ Page Title="Log in" Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="Login.aspx.vb" Inherits="PersonalFinanceTracker.AccountPages.Login" Async="true" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 

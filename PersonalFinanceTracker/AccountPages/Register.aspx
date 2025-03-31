@@ -1,4 +1,4 @@
-<%@ Page Title="Register" Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="Register.aspx.vb" Inherits="PersonalFinanceTracker.Account.Register" Async="true" %>
+<%@ Page Title="Register" Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="Register.aspx.vb" Inherits="PersonalFinanceTracker.AccountPages.Register" Async="true" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 

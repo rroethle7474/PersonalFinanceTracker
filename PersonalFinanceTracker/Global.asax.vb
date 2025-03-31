@@ -42,6 +42,27 @@ Public Class Global_asax
                                                                                    ' client.DefaultRequestHeaders.Add("Accept", "application/json")
                                                                                End Sub)
 
+        ' Register IAccountService with a Typed HttpClient
+        services.AddHttpClient(Of IAccountService, AccountService)(Sub(client)
+                                                                       client.BaseAddress = New Uri(apiBaseUrl)
+                                                                       ' You can add default headers here if needed, e.g.:
+                                                                       ' client.DefaultRequestHeaders.Add("Accept", "application/json")
+                                                                   End Sub)
+
+        ' Register IBudgetCategoryService with a Typed HttpClient
+        services.AddHttpClient(Of IBudgetCategoryService, BudgetCategoryService)(Sub(client)
+                                                                                     client.BaseAddress = New Uri(apiBaseUrl)
+                                                                                     ' You can add default headers here if needed, e.g.:
+                                                                                     ' client.DefaultRequestHeaders.Add("Accept", "application/json")
+                                                                                 End Sub)
+
+        ' Register ITransactionService with a Typed HttpClient
+        services.AddHttpClient(Of ITransactionService, TransactionService)(Sub(client)
+                                                                               client.BaseAddress = New Uri(apiBaseUrl)
+                                                                               ' You can add default headers here if needed, e.g.:
+                                                                               ' client.DefaultRequestHeaders.Add("Accept", "application/json")
+                                                                           End Sub)
+
         ' TODO: Register other services here
     End Sub
 

@@ -5,7 +5,7 @@ Imports System
 Imports System.Threading.Tasks
 Imports System.Web.UI
 
-Namespace Account
+Namespace AccountPages
     Public Class Register
         Inherits BasePage ' Inherit from BasePage
 

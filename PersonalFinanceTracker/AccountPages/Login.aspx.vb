@@ -8,7 +8,7 @@ Imports System.Web.Security
 Imports PersonalFinanceTracker.PersonalFinanceTracker ' Added for FormsAuthentication
 Imports Newtonsoft.Json
 
-Namespace Account
+Namespace AccountPages
     Public Class Login
         Inherits BasePage ' Inherit from BasePage
 
@@ -53,7 +53,7 @@ Namespace Account
                     ' Store user data in session
                     Session("UserLoggedIn") = True
                     Session("Username") = usernameValue
-                    
+
                     ' Store the user data from the API response
                     If result.UserData IsNot Nothing Then
                         ' Convert the dynamic object to a dictionary for easier access
@@ -67,11 +67,11 @@ Namespace Account
                         If userData.ContainsKey("FirstName") Then
                             Session("FirstName") = userData("FirstName")
                         End If
-                        
+
                         If userData.ContainsKey("LastName") Then
                             Session("LastName") = userData("LastName")
                         End If
-                        
+
                         ' Store the full user data object if needed
                         Session("UserData") = result.UserData
                     End If
